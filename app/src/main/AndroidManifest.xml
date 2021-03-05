@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nbu">
         <activity android:name=".activities.CyViewActivity"></activity>
-        <activity android:name=".activities.DateSearchActivity" />
+        <activity android:name=".activities.DateSearchActivity"
+            android:label="Search by date"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

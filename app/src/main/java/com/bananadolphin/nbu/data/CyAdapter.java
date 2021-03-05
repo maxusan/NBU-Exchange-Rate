@@ -77,6 +77,7 @@ public class CyAdapter extends RecyclerView.Adapter<CyAdapter.CurrencyViewHolder
             Intent intent = new Intent(context, CyViewActivity.class);
             intent.putExtra("cc", cy.getCc());
             context.startActivity(intent);
+            
 
 
         }
