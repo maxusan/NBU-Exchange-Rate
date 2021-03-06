@@ -41,10 +41,12 @@ public class CyAdapter extends RecyclerView.Adapter<CyAdapter.CurrencyViewHolder
         String currencyName = currentCy.getCurrencyName();
         String rate = currentCy.getRate();
         String cc = currentCy.getCc();
+        String exchangeDate = currentCy.getExchangeDate();
 
         holder.currencyNameTextView.setText(currencyName);
         holder.rateNameTextView.setText(rate + " UAH");
         holder.ccNameTextView.setText(cc);
+        holder.exchangeDateTextView.setText(exchangeDate);
 
     }
 
@@ -57,12 +59,14 @@ public class CyAdapter extends RecyclerView.Adapter<CyAdapter.CurrencyViewHolder
         TextView currencyNameTextView;
         TextView rateNameTextView;
         TextView ccNameTextView;
+        TextView exchangeDateTextView;
 
         public CurrencyViewHolder(@NonNull View itemView) {
             super(itemView);
             currencyNameTextView = itemView.findViewById(R.id.currencyNameTextView);
             rateNameTextView = itemView.findViewById(R.id.rateTextView);
             ccNameTextView = itemView.findViewById(R.id.ccTextView);
+            exchangeDateTextView = itemView.findViewById(R.id.exchangeDateTextView);
             itemView.setOnClickListener(this);
             Log.d("123", "123");
         }
