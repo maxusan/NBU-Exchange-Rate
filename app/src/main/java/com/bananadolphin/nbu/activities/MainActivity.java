@@ -163,8 +163,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.pickDate:
-                Intent intent = new Intent(this, DateSearchActivity.class);
-                startActivityForResult(intent, SEARCH_ACTIVITY_REQUEST_CODE);
+                Intent dateIntent = new Intent(this, DateSearchActivity.class);
+                startActivityForResult(dateIntent, SEARCH_ACTIVITY_REQUEST_CODE);
+                return true;
+            case R.id.dollarRateByYear:
+                Intent dollarIntent = new Intent(this, DollarRateByYearActivity.class);
+                startActivity(dollarIntent);
                 return true;
             default:
                 return onOptionsItemSelected(item);

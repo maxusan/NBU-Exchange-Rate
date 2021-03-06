@@ -7,5 +7,10 @@
         android:title="Search by date"
         android:icon="@drawable/ic_baseline_calendar_today_24"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/dollarRateByYear"
+        android:title="Get dollar rate for 10 years"
+        android:icon="@drawable/ic_baseline_attach_money_24"
+        app:showAsAction="always"/>
     
 </menu>
