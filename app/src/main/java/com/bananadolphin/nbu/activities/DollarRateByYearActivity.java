@@ -36,6 +36,7 @@ public class DollarRateByYearActivity extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private RecyclerView recyclerView;
     private RequestQueue queue;
+    private int n = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +49,13 @@ public class DollarRateByYearActivity extends AppCompatActivity {
 
         DateFormat format = new SimpleDateFormat("yyyyMMdd");
         Calendar calendar = Calendar.getInstance();
-        years = new String[10];
+        years = new String[n];
         for (int i = 0; i < years.length; i++) {
             years[i] = format.format(calendar.getTime());
             calendar.add(Calendar.DATE, -365);
         }
         try {
-            getDollarRateFor10Years(years);
+            getDollarRateForNYears(years);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -62,7 +63,7 @@ public class DollarRateByYearActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void getDollarRateFor10Years(String[] years) throws InterruptedException{
+    private void getDollarRateForNYears(String[] years) throws InterruptedException{
         cyArrayList = new ArrayList<>();
         for (int i = 0; i < years.length; i++) {
             String url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=" + years[i] + "&json";
